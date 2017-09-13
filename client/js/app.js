@@ -61,7 +61,7 @@ function showSessionDetails(sessionId) {
                         '</ul>' +
                     '</div>' +
                 '</div>' +
-                '</div>' + sessionId;
+                '</div><div>' + sessionId + 'hola</div>';
             slider.slidePage($(html));
         },
         function (error) {
