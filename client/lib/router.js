@@ -13,7 +13,8 @@ var router = (function () {
     }
 
     function start() {
-
+        console.log(window.location.hash,'console.log(window.location.hash);');
+        console.log(window.location.hash.substr(1),'console1;');
         var path = window.location.hash.substr(1),
             parts = path.split('/'),
             partsLength = parts.length;
