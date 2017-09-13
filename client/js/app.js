@@ -9,6 +9,12 @@ function getSessionDetails(sessionId, success, error) {
   force.query(soql, success, error);
 }
 
+function testMethod() {
+    console.log('testMethod');
+    console.log(force.oauth, 'forceToken2');
+    console.log(force.oauth.access_token, 'forceToken2');
+}
+
 function showSessionList() {
     getSessionList(
         function (data) {
