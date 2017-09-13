@@ -514,7 +514,9 @@ var force = (function () {
         upsert: upsert,
         retrieve: retrieve,
         discardToken: discardToken,
-        oauthCallback: oauthCallback
+        oauthCallback: oauthCallback,
+        oauth: oauth,
+        tokenStore: tokenStore
     };
 
 }());
