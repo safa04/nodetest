@@ -25,7 +25,7 @@ function showSessionList() {
                 '<div class="content">' +
                     '<ul class="table-view session-list">' + html + '</ul>' +
                 '</div>' +
-                '</div>' + sessionId;
+                '</div>';
             slider.slidePage($(html));
         },
         function (error) {
@@ -61,7 +61,7 @@ function showSessionDetails(sessionId) {
                         '</ul>' +
                     '</div>' +
                 '</div>' +
-                '</div>';
+                '</div>' + sessionId;
             slider.slidePage($(html));
         },
         function (error) {
