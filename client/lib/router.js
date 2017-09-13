@@ -5,7 +5,7 @@ var router = (function () {
     var routes = [];
 
     function addRoute(route, handler) {
-        routes.push({parts: route, handler: handler});
+        routes.push({parts: route.split('/'), handler: handler});
     }
 
     function load(route) {
