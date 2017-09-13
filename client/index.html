@@ -35,17 +35,7 @@
         });
         //console.log(force.oauth, 'forceToken');
         //console.log(force.oauth.access_token, 'forceToken');
-        $Lightning.use("c:ApplicationAppOut", function() {
-                $Lightning.createComponent(
-                    "c:ApplicationForm", {
-                        accountName: getUrlParameter("accountName"),
-                        contactId: getUrlParameter("contactId"),
-                        applicationId: getUrlParameter("applicationId"),
-                    }, "content", function(component) {
-                        $("#loading").hide();
-                    }
-                );
-            }, "https://<%#DataBag.myDomain%>.lightning.force.com", "<%#DataBag.sessionId%>");
+        
     })
 
 </script>
