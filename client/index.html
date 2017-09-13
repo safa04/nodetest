@@ -43,6 +43,17 @@
         console.log('testMethod4');
         console.log(force.oauth, 'forceToken4');
         console.log(force.tokenStore, 'forceToken5');
+        $Lightning.use("c:ApplicationAppOut", function() {
+                $Lightning.createComponent(
+                    "c:ApplicationForm", {
+                        accountName: getUrlParameter("accountName"),
+                        contactId: getUrlParameter("contactId"),
+                        applicationId: getUrlParameter("applicationId"),
+                    }, "content", function(component) {
+                        $("#loading").hide();
+                    }
+                );
+            }, "https://quotanda--full.lightning.force.com", force.tokenStore.access_token);
     }
 
 </script>
