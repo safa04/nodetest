@@ -33,8 +33,8 @@
         force.login(router.start, function (error) {
             alert('Login failed: ' + error);
         });
-        console.log(force.oauth, 'forceToken');
-        console.log(force.oauth.access_token, 'forceToken');
+        //console.log(force.oauth, 'forceToken');
+        //console.log(force.oauth.access_token, 'forceToken');
         $Lightning.use("c:ApplicationAppOut", function() {
                 $Lightning.createComponent(
                     "c:ApplicationForm", {
