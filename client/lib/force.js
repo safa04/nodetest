@@ -7,7 +7,7 @@ var force = (function () {
 
     "use strict";
 
-    var loginURL = 'https://login.salesforce.com',
+    var loginURL = 'https://test.salesforce.com',
 
     // The Connected App client Id. Default app id provided - Not for production use.
         appId = '3MVG9fMtCkV6eLheIEZplMqWfnGlf3Y.BcWdOf1qytXo9zxgbsrUbS.ExHTgUPJeb3jZeT8NYhc.hMyznKU92',
