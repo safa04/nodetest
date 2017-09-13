@@ -1,5 +1,5 @@
 function getSessionList(success, error) {
-  var soql = "SELECT Session__r.Id, Session__r.Name FROM Session_Speaker__c";
+  var soql = "SELECT Name FROM Account";
   force.query(soql, success, error);
 }
 
@@ -50,7 +50,7 @@ function showSessionDetails(sessionId) {
                         '<ul class="table-view">' +
                             '<li class="table-view-cell">' +
                                 '<h4>' + session.Name + '</h4>' +
-                                '<p>' + (session.Session_Date__c || 'No time yet')+ '</p>' +
+                                '<p>' + (session.Name || 'No time yet')+ '</p>' +
                             '</li>' +
                             '<li class="table-view-cell">Speaker: ' +
                                 session.Name +
