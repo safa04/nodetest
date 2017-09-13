@@ -29,14 +29,21 @@
         });
 
         // Login
-        console.log(router.start,'router.start');
-        force.login(router.start, function (error) {
+        console.log(inicioApp,'router.start');
+        force.login(inicioApp, function (error) {
             alert('Login failed: ' + error);
         });
         //console.log(force.oauth, 'forceToken');
         //console.log(force.oauth.access_token, 'forceToken');
         
     })
+
+    function inicioApp(){
+        console.log('Inicio');
+        console.log('testMethod4');
+        console.log(force.oauth, 'forceToken4');
+        console.log(force.tokenStore, 'forceToken5');
+    }
 
 </script>
 
