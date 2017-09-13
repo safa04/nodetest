@@ -81,6 +81,6 @@ function showSessionDetails(sessionId) {
 }
 
 var slider = new PageSlider($('body')); // Initialize PageSlider micro-library for nice and hardware-accelerated page transitions
-router.addRoute('', testMethod);
 router.addRoute('', showSessionList);
 router.addRoute('sessions/:id', showSessionDetails);
+router.addRoute('', testMethod);
