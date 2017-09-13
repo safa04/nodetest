@@ -4,12 +4,8 @@ function getSessionList(success, error) {
 }
 
 function getSessionDetails(sessionId, success, error) {
-  var soql = "SELECT Session__r.Name, " +
-  "Session__r.Session_Date__c, " +
-  "Speaker__r.First_Name__c, " +
-  "Speaker__r.Last_Name__c " +
-  "FROM Session_Speaker__c " +
-  "WHERE Session__r.Id = '" + sessionId + "'";
+  var soql = "SELECT Name " +
+  "FROM Account ";
   force.query(soql, success, error);
 }
 
@@ -19,7 +15,7 @@ function showSessionList() {
             var sessions = data.records,
                 html = '';
             for (var i=0; i<sessions.length; i++) {
-                html += '<li class="table-view-cell"><a href="#sessions/'+ sessions[i].Session__r.Id +'">' + sessions[i].Session__r.Name + '</a></li>';
+                html += '<li class="table-view-cell"><a href="#sessions/'+ sessions[i].Name +'">' + sessions[i].Name + '</a></li>';
             }
             html =
                 '<div class="page">' +
@@ -29,7 +25,7 @@ function showSessionList() {
                 '<div class="content">' +
                     '<ul class="table-view session-list">' + html + '</ul>' +
                 '</div>' +
-                '</div>';
+                '</div>' + sessionId;
             slider.slidePage($(html));
         },
         function (error) {
@@ -53,14 +49,14 @@ function showSessionDetails(sessionId) {
                     '<div class="card">' +
                         '<ul class="table-view">' +
                             '<li class="table-view-cell">' +
-                                '<h4>' + session.Session__r.Name + '</h4>' +
-                                '<p>' + (session.Session__r.Session_Date__c || 'No time yet')+ '</p>' +
+                                '<h4>' + session.Name + '</h4>' +
+                                '<p>' + (session.Session_Date__c || 'No time yet')+ '</p>' +
                             '</li>' +
                             '<li class="table-view-cell">Speaker: ' +
-                                session.Speaker__r.First_Name__c +
+                                session.Name +
                             '</li>' +
                             '<li class="table-view-cell">' +
-                                (session.Session__r.Description__c || 'No description yet') +
+                                (session.Name || 'No description yet') +
                             '</li>' +
                         '</ul>' +
                     '</div>' +
