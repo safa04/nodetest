@@ -13,9 +13,13 @@ function testMethod() {
     console.log('testMethod');
     console.log(force.oauth, 'forceToken2');
     console.log(force.oauth.access_token, 'forceToken2');
+    return false;
 }
 
 function showSessionList() {
+    console.log('testMethod2');
+    console.log(force.oauth, 'forceToken3');
+    console.log(force.oauth.access_token, 'forceToken3');
     getSessionList(
         function (data) {
             var sessions = data.records,
