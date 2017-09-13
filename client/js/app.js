@@ -12,14 +12,14 @@ function getSessionDetails(sessionId, success, error) {
 function testMethod() {
     console.log('testMethod');
     console.log(force.oauth, 'forceToken2');
-    console.log(force.oauth.access_token, 'forceToken2');
+    console.log(force.tokenStore, 'forceToken2');
     return false;
 }
 
 function showSessionList() {
     console.log('testMethod2');
     console.log(force.oauth, 'forceToken3');
-    console.log(force.oauth.access_token, 'forceToken3');
+    console.log(force.tokenStore, 'forceToken3');
     getSessionList(
         function (data) {
             var sessions = data.records,
@@ -81,7 +81,6 @@ function showSessionDetails(sessionId) {
 }
 
 var slider = new PageSlider($('body')); // Initialize PageSlider micro-library for nice and hardware-accelerated page transitions
+router.addRoute('', testMethod);
 router.addRoute('', showSessionList);
 router.addRoute('sessions/:id', showSessionDetails);
-router.addRoute('', testMethod);
-
