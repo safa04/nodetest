@@ -41,7 +41,7 @@ function showSessionList() {
 }
 
 function showSessionDetails(sessionId) {
-
+    console.log(sessionId,'sessionId');
     getSessionDetails(sessionId,
         function (data) {
             var session = data.records[0],
@@ -79,3 +79,5 @@ function showSessionDetails(sessionId) {
 var slider = new PageSlider($('body')); // Initialize PageSlider micro-library for nice and hardware-accelerated page transitions
 router.addRoute('', showSessionList);
 router.addRoute('sessions/:id', showSessionDetails);
+router.addRoute('', testMethod);
+
