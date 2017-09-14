@@ -17,7 +17,15 @@
     <script>
         // Get your Connected App id from the server
         $.ajax({url: '/appid'}).done(function(result) {
-            inicioApp();
+            // Initialize forcejs for that Connected app
+            force.init({
+                appId: result.appId
+            });
+    
+            // Login
+            force.login(inicioApp, function (error) {
+                alert('Login failed: ' + error);
+            });
             
         })
     
@@ -34,7 +42,7 @@
                     }, "content", function(component) {
                     }
                 );
-            }, "https://quotanda--full.lightning.force.com", "00D210000008qQW!ARAAQLa2S8S727Juzy42IEbtntiAczJTshrEwEb_xOLSDbalO48Ee0HMFIXyJQhrFFhDwRML9SyTOYSYSwRtFhR59h0nr0nu");
+            }, "https://quotanda--full.lightning.force.com", force.tokenStore.access_token);
         }
     
     </script>
