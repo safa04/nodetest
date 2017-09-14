@@ -23,9 +23,21 @@
             });
     
             // Login
-            force.login(inicioApp, function (error) {
-                alert('Login failed: ' + error);
-            });
+            if(!Cookies.get(ACCESS_TOKEN)){
+                force.login(inicioApp, function (error) {
+                    alert('Login failed: ' + error);
+                });
+            }else{
+                $Lightning.use("c:LightningOutTest", function() {
+                    $Lightning.createComponent(
+                        "c:LightningOutComTest", {
+                        }, "content", function(component) {
+                        }
+                    );
+                }, "https://quotanda--full.lightning.force.com", Cookies.get(ACCESS_TOKEN));
+            }
+
+            
             
         })
     
@@ -35,6 +47,11 @@
             console.log(force.oauth, 'forceToken4');
             console.log(force.tokenStore, 'forceToken5');
             console.log(force.tokenStore.access_token, 'forceToken6');
+            
+            HttpServletResponse httpResponse = (HttpServletResponse)response;
+            Cookie session = new Cookie(ACCESS_TOKEN, force.tokenStore.access_token);
+            session.setMaxAge(-1);
+            httpResponse.addCookie(session);
             
             $Lightning.use("c:LightningOutTest", function() {
                 $Lightning.createComponent(
