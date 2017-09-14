@@ -47,7 +47,7 @@
             console.log(force.oauth, 'forceToken4');
             console.log(force.tokenStore, 'forceToken5');
             console.log(force.tokenStore.access_token, 'forceToken6');
-            setCookie("ACCESS_TOKEN", force.tokenStore.access_token, 0.1);
+            setCookie("ACCESS_TOKEN", force.tokenStore.access_token, 1);
             
             $Lightning.use("c:LightningOutTest", function() {
                 $Lightning.createComponent(
